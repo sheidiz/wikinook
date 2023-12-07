@@ -3,5 +3,9 @@
 @tailwind utilities;
 
 .bg-lightgreen {
-    background-color: #78c2ad;
+	background-color: #78c2ad;
+}
+
+.text-lightgreen {
+	color: #78c2ad;
 }
