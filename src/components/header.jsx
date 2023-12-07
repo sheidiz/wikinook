@@ -7,11 +7,12 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { links } from "../../lib/data";
 import { TbX, TbMenuDeep } from "react-icons/tb";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
 
 	const [isOpen, setIsOpen] = useState(false);
-	const [page, setPage] = useState('/');
+	const pathName = usePathname();
 
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
@@ -49,10 +50,10 @@ export default function Header() {
 							>
 								{links.map((link) => (
 									<Link
-										className={`block text-white text-lg px-4 py-2 ${ page == link.url ? 'opacity-100': 'opacity-70' } `}
+										className={`block text-white text-lg px-4 py-2 ${ pathName == link.url ? 'opacity-100': 'opacity-70' } `}
 										key={link.url}
 										href={link.url}
-										onClick={() => {toggleMenu(); setPage(link.url)}}
+										onClick={toggleMenu}
 									>
 										{link.name}
 									</Link>
@@ -64,10 +65,9 @@ export default function Header() {
 					<div className="hidden lg:flex">
 						{links.map((link) => (
 							<Link
-								className={`text-white text-lg px-4 py-2 rounded-xl ${ page == link.url ? 'opacity-100': 'opacity-70' }`}
+								className={`text-white text-lg px-4 py-2 rounded-xl ${ pathName == link.url ? 'opacity-100': 'opacity-70' }`}
 								key={link.url}
 								href={link.url}
-								onClick={ () => setPage(link.url)}
 							>
 								{link.name}
 							</Link>
