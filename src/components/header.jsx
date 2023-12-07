@@ -20,11 +20,11 @@ export default function Header() {
 
 	return (
 		<header>
-			<nav className="bg-lightgreen p-3">
+			<nav className="bg-lightgreen p-2">
 				<div className="container mx-auto flex justify-between lg:justify-around items-center">
-					<div className="text-white text-2xl font-semibold">
+					<div className="text-white text-3xl font-medium">
 						<Link href="/">
-							<Image src={Logo} alt="Logo" className="h-8 pb-1 pe-2 w-auto inline-block" />
+							<Image src={Logo} alt="Logo" className="h-10 pb-2 pe-2 w-auto inline-block" />
 							WikiNook
 						</Link>
 					</div>
@@ -34,8 +34,8 @@ export default function Header() {
 						onClick={toggleMenu}
 					>
 						{isOpen ?
-							(<TbX className="text-white h-6 w-auto" />) :
-							(<TbMenuDeep className="text-white h-6 w-auto" />)
+							(<TbX className="text-white h-7 w-auto" />) :
+							(<TbMenuDeep className="text-white h-7 w-auto" />)
 						}
 					</button>
 
