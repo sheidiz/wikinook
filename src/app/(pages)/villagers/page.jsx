@@ -1,11 +1,13 @@
 "use client";
 
-import React, { useEffect, useState } from "react"
-import { getVillagers } from "../../../../lib/data.ts"
+import React, { useEffect, useState } from "react";
+import { TbFilterX } from "react-icons/tb";
+import { getVillagers, listGenders, listSpecies, listSigns } from "../../../../lib/data.ts";
 import Loading from "@/components/loading.jsx";
 import VillagerCard from "./villagerCard.jsx";
 import Search from "./(components)/search.jsx";
 import Pagination from "./(components)/pagination.jsx";
+import Filter from "./(components)/filter.jsx";
 
 export default function Villagers() {
 
@@ -36,16 +38,38 @@ export default function Villagers() {
     getData();
   }, [search, gender, species, sign]);
 
+  const clearFilters = () => {
+    setGender('');
+    setSpecies('');
+    setSign('');
+    setCurrentPage(0);
+    window.location.reload(false);
+  };
+
   return (
-    <div className="my-3 md:my-6">
+    <div className="my-3 md:my-6 mx-2 md:mx-20">
       <div>
         <h1 className="text-red-300 text-center text-5xl font-bold mb-5">Villagers</h1>
         <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-        {
-          loading ? (<Loading />) : (<VillagerCard results={data[currentPage]} />)
-        }
+      <div className="flex flex-col md:flex-row gap-10">
+        <div className="flex flex-col mx-auto w-4/5 md:w-1/5 text-gray-400">
+          <p className="text-2xl font-bold text-center"> Filters</p>
+
+          <button className="mb-2" onClick={clearFilters}>
+            <TbFilterX className="inline-block me-1 mb-1" />
+            <span className="underline">Clear Filters</span>
+          </button>
+
+          <Filter title="Gender" content={listGenders} setFilter={setGender} selected={gender} setCurrentPage={setCurrentPage} />
+          <Filter title="Species" content={listSpecies} setFilter={setSpecies} selected={species} setCurrentPage={setCurrentPage} />
+          <Filter title="Signs" content={listSigns} setFilter={setSign} selected={sign} setCurrentPage={setCurrentPage} />
+        </div>
+        <div className="flex flex-wrap gap-5 md:w-4/5">
+          {
+            loading ? (<Loading />) : (<VillagerCard results={data[currentPage]} />)
+          }
+        </div>
       </div>
       <Pagination pages={pages} setCurrentPage={setCurrentPage} />
     </div>

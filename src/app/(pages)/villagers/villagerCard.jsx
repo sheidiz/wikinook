@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPaw, FaCakeCandles, FaSun, FaQuoteRight, } from "react-icons/fa6";
+import { FaPaw, FaCakeCandles, FaSun } from "react-icons/fa6";
 import { BsGenderFemale, BsGenderMale } from "react-icons/bs";
 
 export default function VillagerCard({ results }) {
@@ -7,10 +7,10 @@ export default function VillagerCard({ results }) {
 	let display;
 	if (results) {
 		display = results.map((x) => {
-			let { id, image_url, islander, name, gender, species, birthday_day, birthday_month, sign, quote } = x;
+			let { id, image_url, name, gender, species, birthday_day, birthday_month, sign, quote } = x;
 
 			return (
-				<div key={id} id="card-container" className="w-80 rounded-xl mb-5 flex flex-col  max-w-md p-4 text-center card-shadow">
+				<div key={id} id="card-container" className="h-auto max-h-70 w-72 rounded-xl mb-5 flex flex-col p-4 text-center card-shadow">
 					<div className="flex justify-center gap-4 text-sm">
 						<p><FaPaw className="inline-block me-1 h-4" />{species ? (species) : "No info"}</p>
 						<p><FaCakeCandles className="inline-block me-1 h-4" />{birthday_day ? (birthday_month + " " + birthday_day) : "No info"}</p>
@@ -25,7 +25,7 @@ export default function VillagerCard({ results }) {
 							<img src={image_url} alt={name} className="h-24 w-auto" />
 						</div>
 						{
-							quote && <p className="italic">{quote}</p>
+							quote && <p className="italic text-sm">{quote}</p>
 						}
 					</div>
 				</div>

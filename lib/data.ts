@@ -19,6 +19,14 @@ export const links = [
   }
 ] as const;
 
+export const listGenders = ['Female', 'Male'] as const;
+export const listSigns = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio',
+  'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'] as const;
+export const listSpecies = ['Alligator', 'Anteater', 'Bear', 'Bear cub', 'Bird', 'Bull', 'Cat', 'Cub', 'Chicken',
+  'Cow', 'Deer', 'Dog', 'Duck', 'Eagle', 'Elephant', 'Frog', 'Goat', 'Gorilla', 'Hamster',
+  'Hippo', 'Horse', 'Koala', 'Kangaroo', 'Lion', 'Monkey', 'Mouse', 'Octopus', 'Ostrich',
+  'Penguin', 'Pig', 'Rabbit', 'Rhino', 'Rhinoceros', 'Sheep', 'Squirrel', 'Tiger', 'Wolf'] as const;
+
 const api = 'https://api.nookipedia.com/';
 const apiKey = ""; /*hard coding bc it doesnt work */
 
@@ -52,9 +60,9 @@ export const getVillagers = async (search, gender, species, sign) => {
   if (villagers) {
     const filtered = villagers.filter(
       item => (item['name'].toLowerCase().startsWith(search.toLowerCase())
-        && item['gender'].toLowerCase().includes(gender.toLowerCase())
-        && item['species'].toLowerCase().includes(species.toLowerCase())
-        && item['sign'].toLowerCase().includes(sign.toLowerCase())
+        && item['gender'].startsWith(gender)
+        && item['sign'].includes(sign)
+        && (species.length > 0 ? (item['species'] === (species)) : 'true')
       )
     );
     return paginateItems(filtered);
