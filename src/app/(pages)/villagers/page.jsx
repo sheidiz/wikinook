@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from 'react'
-import { getVillagers } from '../../../../lib/data.ts'
-import Loading from '@/components/loading.jsx';
-import VillagerCard from './villagerCard.jsx';
+import React, { useEffect, useState } from "react"
+import { getVillagers } from "../../../../lib/data.ts"
+import Loading from "@/components/loading.jsx";
+import VillagerCard from "./villagerCard.jsx";
+import Search from "./(filters)/search.jsx";
 
 export default function Villagers() {
 
@@ -12,10 +13,10 @@ export default function Villagers() {
   const [pages, setPages] = useState();
   const [currentPage, setCurrentPage] = useState(0);
 
-  const [search, setSearch] = useState('');
-  const [gender, setGender] = useState('');
-  const [species, setSpecies] = useState('');
-  const [sign, setSign] = useState('');
+  const [search, setSearch] = useState("");
+  const [gender, setGender] = useState("");
+  const [species, setSpecies] = useState("");
+  const [sign, setSign] = useState("");
 
   useEffect(() => {
     const getData = async () => {
@@ -27,7 +28,7 @@ export default function Villagers() {
         const pages = Math.ceil(totalItems / 10);
         setPages(pages);
       } catch (error) {
-        console.error('Error fetching villagers:', error);
+        console.error("Error fetching villagers:", error);
       }
       setLoading(false);
     };
@@ -35,11 +36,12 @@ export default function Villagers() {
   }, [search, gender, species, sign]);
 
   return (
-    <div className='my-3 md:my-6'>
-      <div id="title" className='text-red-300 text-center text-5xl font-bold mb-5'>
-        <h1>Villagers</h1>
+    <div className="my-3 md:my-6">
+      <div>
+        <h1 className="text-red-300 text-center text-5xl font-bold mb-5">Villagers</h1>
+        <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
       </div>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         {
           loading ? (<Loading />) : (<VillagerCard results={data[currentPage]} />)
         }

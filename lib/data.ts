@@ -20,7 +20,7 @@ export const links = [
 ] as const;
 
 const api = 'https://api.nookipedia.com/';
-const apiKey = process.env.NEXT_NOOKIPEDIA_API_KEY; /*hard coding bc it doesnt work */
+const apiKey = ""; /*hard coding bc it doesnt work */
 
 /* Api Fetch Internal Function */
 async function getData(path) {
