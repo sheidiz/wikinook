@@ -10,7 +10,7 @@ export default function VillagerCard({ results }) {
 			let { id, image_url, islander, name, gender, species, birthday_day, birthday_month, sign, quote } = x;
 
 			return (
-				<div key={id} id="card-container" className="w-72 rounded-xl mb-5 flex flex-col  max-w-md p-4 text-center card-shadow">
+				<div key={id} id="card-container" className="w-80 rounded-xl mb-5 flex flex-col  max-w-md p-4 text-center card-shadow">
 					<div className="flex justify-center gap-4 text-sm">
 						<p><FaPaw className="inline-block me-1 h-4" />{species ? (species) : "No info"}</p>
 						<p><FaCakeCandles className="inline-block me-1 h-4" />{birthday_day ? (birthday_month + " " + birthday_day) : "No info"}</p>
