@@ -43,11 +43,23 @@ async function getData(path) {
 
 /* Pagination Logic -> The API doesn't provide pages. This will divide results into arrays of 10 items */
 const paginateItems = (array) => {
-  const itemsPerPage = 10;
+  let width = window.innerWidth;
+
+  const itemsPerPage = () => {
+    if (width <= 576) { /*sm or lower */
+      return 6;
+    } else if (width <= 1024) { /*md or lower */
+      return 10;
+    } else { /*higher than md */
+      return 9;
+    }
+  };
+
   const paginated = [];
   if (array && array.length > 0) {
-    for (let i = 0; i < array.length; i += itemsPerPage) {
-      paginated.push(array.slice(i, i + itemsPerPage));
+    const itemsPerPageValue = itemsPerPage();
+    for (let i = 0; i < array.length; i += itemsPerPageValue) {
+      paginated.push(array.slice(i, i + itemsPerPageValue));
     }
   }
   return paginated;

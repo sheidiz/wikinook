@@ -29,7 +29,7 @@ export default function Villagers() {
         const villagers = await getVillagers(search, gender, species, sign);
         setData(villagers);
         const totalItems = villagers.reduce((total, currentArray) => total + currentArray.length, 0);
-        const pages = Math.ceil(totalItems / 10);
+        const pages = Math.ceil(totalItems / (villagers[0].length));
         setPages(pages);
       } catch (error) {
         console.error("Error fetching villagers:", error);
