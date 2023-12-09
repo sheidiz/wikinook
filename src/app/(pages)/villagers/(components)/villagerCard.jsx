@@ -14,10 +14,10 @@ export default function VillagerCard({ results }) {
 				<div
 					key={id}
 					className="h-auto max-h-70 w-72 rounded-xl flex flex-col text-center text-gray-600 border-2 border-red-300 shadow-lg shadow-slate-100">
-					<div className="p-2 flex justify-center gap-4 text-sm bg-red-300 rounded-t-md ">
-						<p className="flex flex-col items-center lg:flex-row lg:gap-1"><FaPaw />{species ? (species) : "No info"}</p>
-						<p className="flex flex-col items-center lg:flex-row lg:gap-1"><FaCakeCandles />{birthday_day ? (birthday_month + " " + birthday_day) : "No info"}</p>
-						<p className="flex flex-col items-center lg:flex-row lg:gap-1"><FaSun />{sign ? (sign) : "No info"}</p>
+					<div className="p-2 flex justify-around gap-4 text-sm bg-red-300 rounded-t-md ">
+						<p className="flex flex-col items-center"><FaPaw />{species ? (species) : "No info"}</p>
+						<p className="flex flex-col items-center"><FaCakeCandles />{birthday_day ? (birthday_month + " " + birthday_day) : "No info"}</p>
+						<p className="flex flex-col items-center"><FaSun />{sign ? (sign) : "No info"}</p>
 					</div>
 					<div className="py-2 border-b border-red-300">
 						<p className="font-bold items-center text-xl uppercase ">
@@ -29,7 +29,7 @@ export default function VillagerCard({ results }) {
 						<div className="flex justify-center pb-2">
 							<img src={image_url} alt={name} className="h-24 w-auto" />
 						</div>
-						{quote && <p className="italic text-sm"><FaQuoteRight className="inline-block me-1" />{quote}</p>}
+						{quote && <p className="italic text-sm"><FaQuoteRight className="inline-block mb-1 me-1" />{quote}</p>}
 					</div>
 				</div>
 			)
