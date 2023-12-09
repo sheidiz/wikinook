@@ -52,10 +52,9 @@ export default function Villagers() {
         <h1 className="text-red-300 text-center text-2xl md:text-5xl font-bold mb-4">Villagers</h1>
         <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
       </div>
-      <div className="flex flex-col md:flex-row lg:gap-10">
-        <div className="flex flex-col mx-auto w-full md:w-2/6 lg:w-1/5 text-gray-400">
+      <div className="flex flex-col md:flex-row gap-2 lg:gap-10">
+        <div className="flex flex-col mx-auto w-4/5 md:w-2/6 lg:w-1/5 text-gray-400">
           <p className="text-xl md:text-2xl font-bold text-start md:text-center">Filters</p>
-
           <button className="mt-0 lg:mt-2 mb-2 text-sm text-start md:text-center" onClick={clearFilters}>
             <TbFilterX className="inline-block me-1 mb-1" />
             <span className="underline">Clear Filters</span>
