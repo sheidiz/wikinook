@@ -4,10 +4,11 @@ import React, { useEffect, useState } from "react";
 import { TbFilterX } from "react-icons/tb";
 import { getVillagers, listGenders, listSpecies, listSigns } from "../../../../lib/data.ts";
 import Loading from "@/components/loading.jsx";
-import VillagerCard from "./villagerCard.jsx";
+import VillagerCard from "./(components)/villagerCard.jsx";
 import Search from "./(components)/search.jsx";
 import Pagination from "./(components)/pagination.jsx";
 import Filter from "./(components)/filter.jsx";
+
 
 export default function Villagers() {
 

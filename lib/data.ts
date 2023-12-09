@@ -1,5 +1,3 @@
-import React from "react";
-
 export const links = [
   {
     name: "Home",
@@ -28,7 +26,7 @@ export const listSpecies = ['Alligator', 'Anteater', 'Bear', 'Bear cub', 'Bird',
   'Penguin', 'Pig', 'Rabbit', 'Rhino', 'Rhinoceros', 'Sheep', 'Squirrel', 'Tiger', 'Wolf'] as const;
 
 const api = 'https://api.nookipedia.com/';
-const apiKey = ""; /*hard coding bc it doesnt work */
+const apiKey = process.env.NEXT_PUBLIC_NOOKIPEDIA_API_KEY;
 
 /* Api Fetch Internal Function */
 async function getData(path) {

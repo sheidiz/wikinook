@@ -18,7 +18,7 @@ export default function Filter({ title, content, setFilter, selected, setCurrent
       }>
         <div className="overflow-hidden flex flex-row flex-wrap gap-2">
           {content.map((item, index) => (
-            <React.Fragment key={index} className="">
+            <React.Fragment key={index}>
               <input
                 className="hidden"
                 type="radio"
@@ -32,7 +32,7 @@ export default function Filter({ title, content, setFilter, selected, setCurrent
                 }}
                 on
                 className={`block p-1 border-2 ${item == selected ? 'border-red-200' : ''}`}
-                for={`${title}-${index}`}
+                htmlFor={`${title}-${index}`}
               >
                 {item}
               </label>

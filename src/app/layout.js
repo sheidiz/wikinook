@@ -8,6 +8,15 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'WikiNook',
   description: 'Your source for Animal Crossing data!',
+  icons:{
+    icon:[
+      {
+        media: '(prefers-color-scheme: light)',
+        url: '@/public/images/favicon.ico',
+        href: '@/public/images/favicon.ico',
+      }
+    ]
+  }
 }
 
 export default function RootLayout({ children }) {
