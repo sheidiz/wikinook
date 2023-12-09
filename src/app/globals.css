@@ -9,8 +9,3 @@
 .text-lightgreen {
 	color: #78c2ad;
 }
-
-.card-shadow{
-	background: #e0e0e0;
-	box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ffffff;
-}

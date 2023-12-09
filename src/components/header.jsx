@@ -20,17 +20,17 @@ export default function Header() {
 
 	return (
 		<header>
-			<nav className="bg-lightgreen p-2">
+			<nav className="bg-lightgreen p-1">
 				<div className="container mx-auto flex justify-between lg:justify-around items-center">
-					<div className="text-white text-3xl font-medium">
+					<div className="text-gray-50 ms-2 text-2xl md:text-3xl font-medium pt-1">
 						<Link href="/">
-							<Image src={Logo} alt="Logo" className="h-10 pb-2 pe-2 w-auto inline-block" />
+							<Image src={Logo} alt="Logo" className="h-10 ms-1 pb-2 pe-2 w-auto inline-block" />
 							WikiNook
 						</Link>
 					</div>
 
 					<button
-						className="lg:hidden text-white focus:outline-none"
+						className="lg:hidden me-2 text-white focus:outline-none"
 						onClick={toggleMenu}
 					>
 						{isOpen ?
