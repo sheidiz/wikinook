@@ -8,6 +8,7 @@ import VillagerCard from "./(components)/villagerCard.jsx";
 import Search from "./(components)/search.jsx";
 import Pagination from "./(components)/pagination.jsx";
 import Filter from "./(components)/filter.jsx";
+import SectionTitle from "@/components/section-title.jsx";
 
 
 export default function Villagers() {
@@ -49,7 +50,7 @@ export default function Villagers() {
   return (
     <div className="my-3 md:my-6 mx-2 md:mx-10 lg:mx-20">
       <div>
-        <h1 className="text-red-300 text-center text-2xl md:text-5xl font-bold mb-4">Villagers</h1>
+        <SectionTitle>Villagers</SectionTitle>
         <Search setSearch={setSearch} setCurrentPage={setCurrentPage} />
       </div>
       <div className="flex flex-col md:flex-row gap-2 lg:gap-10">
