@@ -5,7 +5,7 @@ export default function Filter({ title, content, setFilter, selected, setCurrent
   const [accordionOpen, setAccordionOpen] = useState(false);
 
   return (
-    <div className="p-1 md:p-3 border">
+    <div className="p-1 md:p-3 border first:rounded-t-md last:rounded-b-md even:border-y-0">
       <button
         onClick={() => setAccordionOpen(!accordionOpen)}
         className="mb-2 flex justify-between w-full text-md md:text-lg transition focus:text-red-300 focus:font-bold"

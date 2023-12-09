@@ -59,7 +59,7 @@ export default function Villagers() {
             <TbFilterX className="inline-block me-1 mb-1" />
             <span className="underline">Clear Filters</span>
           </button>
-          <div className="border rounded-md">
+          <div>
             <Filter title="Gender" content={listGenders} setFilter={setGender} selected={gender} setCurrentPage={setCurrentPage} />
             <Filter title="Species" content={listSpecies} setFilter={setSpecies} selected={species} setCurrentPage={setCurrentPage} />
             <Filter title="Signs" content={listSigns} setFilter={setSign} selected={sign} setCurrentPage={setCurrentPage} />
