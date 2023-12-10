@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { months } from "../../../../../lib/data";
 
-export default function FilterMonth({ setFilters }) {
+export default function FilterMonth({ filters, setFilters }) {
 	
 	const [isOpen, setIsOpen] = useState(false);
 	const toggleDropdown = () => {
@@ -34,13 +34,13 @@ export default function FilterMonth({ setFilters }) {
 						transition={{ duration: 0.3 }}
 						className="absolute top-10 md:top-12 inset-x-0 bg-red-200"
 					>
-						{months.map((month) => (
+						{months.map((month, index) => (
 							<button
 								className="block w-full bg-white text-start text-red-300 hover:font-bold text-xs md:text-sm px-4 py-2 border-x first:border-t last:border-b"
-								key={month.monthId}
+								key={index}
 								onClick={() => {
 									toggleDropdown();
-									setFilters({ ...filter, month: month.monthId })
+									setFilters({ ...filters, month: index })
 								}}
 							>
 								{month.month}
