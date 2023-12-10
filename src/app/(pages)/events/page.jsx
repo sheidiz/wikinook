@@ -40,7 +40,7 @@ export default function Page() {
   }, [filters]);
 
   return (
-    <div className="mt-3 mb-5 md:my-6 mx-2 md:mx-10 lg:mx-20">
+    <div className="mt-3 md:mt-6 mb-8 md:mb-10 mx-2 md:mx-10 lg:mx-20">
       <SectionTitle>Events</SectionTitle>
       <div className="mb-5 flex justify-center md:justify-start gap-2">
         <FilterMonth filters={filters} setFilters={setFilters} />
