@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { TbMapNorth, TbMapSouth } from "react-icons/tb";
 
 export default function FilterHemisphere({ filters, setFilters }) {
@@ -12,8 +11,8 @@ export default function FilterHemisphere({ filters, setFilters }) {
     })
   }
 
-  const labelStyle = "md:w-54 px-4 flex items-center gap-2 rounded py-1 text-gray-800 text-sm md:text-md font-medium cursor-pointer";
-  const activeStyle = "bg-gray-100 !text-red-300 font-bold";
+  const labelStyle = "md:w-54 px-4 flex items-center gap-2 rounded py-1 font-normal text-gray-400 text-sm md:text-md font-medium cursor-pointer";
+  const activeStyle = "bg-gray-100 !text-red-300 !font-bold";
 
   return (
     <div className="bg-white shadow flex flex-col sm:flex-row select-none items-center justify-center rounded-md p-1">

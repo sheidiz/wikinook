@@ -1,16 +1,29 @@
 "use client";
 
-import SectionTitle from "@/components/section-title"
-import React, { useEffect, useState } from "react"
-import FilterMonth from "./(components)/filter-month"
-import FilterHemisphere from "./(components)/filter-hemisphere"
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { months, getEvents } from "../../../../lib/data";
+import SectionTitle from "@/components/section-title";
+import FilterMonth from "./(components)/filter-month";
+import FilterHemisphere from "./(components)/filter-hemisphere";
 import Events from "./(components)/events";
 
 export default function Page() {
   const [loading, setLoading] = useState();
   const [data, setData] = useState([]);
   const [filters, setFilters] = useState({ month: "-1", hemisphere: "(Northern Hemisphere)" });
+
+  const container = {
+    hidden: { opacity: 1, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  }
 
   useEffect(() => {
     const getData = async () => {
@@ -37,9 +50,13 @@ export default function Page() {
       {filters.month >= 0 && (
         <div>
           <h2 className="mb-3 text-gray-400 text-2xl font-semibold">{months[filters.month].month}</h2>
-          <div className="grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <motion.div className="grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+            key={filters.month + filters.hemisphere}
+            variants={container}
+            initial="hidden"
+            animate="visible">
             <Events events={data[filters.month]} />
-          </div>
+          </motion.div>
         </div>)
       }
     </div>
