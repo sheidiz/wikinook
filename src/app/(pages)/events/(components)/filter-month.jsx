@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { months } from "../../../../../lib/data";
@@ -13,7 +13,7 @@ export default function FilterMonth({ setFilters }) {
 	};
 
 	return (
-		<div className="relative w-44 p-1 md:p-2 border rounded-lg bg-red-300">
+		<div className="relative max-h-9 sm:max-h-14 w-44 p-1 md:p-2 border rounded-lg bg-red-300">
 			<button
 				className="flex flex-row gap-4 ms-1 me-2 text-white text-md focus:outline-none"
 				onClick={toggleDropdown}
@@ -32,7 +32,7 @@ export default function FilterMonth({ setFilters }) {
 						animate={{ opacity: 1, y: 0 }}
 						exit={{ opacity: 0, y: -10 }}
 						transition={{ duration: 0.3 }}
-						className="absolute top-12 inset-x-0 bg-red-200"
+						className="absolute top-10 md:top-12 inset-x-0 bg-red-200"
 					>
 						{months.map((month) => (
 							<button

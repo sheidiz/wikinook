@@ -7,14 +7,14 @@ import FilterHemisphere from "./(components)/filter-hemisphere"
 
 export default function Page() {
 
-  const [filters, setFilters] = useState({ month:"", hemisphere:"South Hemisphere"});
+  const [filters, setFilters] = useState({ month:"", hemisphere:"(Northern Hemisphere)"});
 
   return (
     <div className="my-3 md:my-6 mx-2 md:mx-10 lg:mx-20">
       <SectionTitle>Events</SectionTitle>
       <div className="flex justify-center md:justify-start gap-2">
         <FilterMonth setFilters={setFilters} />
-        <FilterHemisphere filters={filters.hemisphere} setFilters={setFilters} />
+        <FilterHemisphere filters={filters} setFilters={setFilters} />
       </div>
     </div>
   )
