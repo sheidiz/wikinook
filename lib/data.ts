@@ -80,3 +80,18 @@ export const getVillagers = async (search, gender, species, sign) => {
     return [];
   }
 }
+
+export const months = [
+  { month: "January", monthId: "01" },
+  { month: "February", monthId: "02" },
+  { month: "March", monthId: "03" },
+  { month: "April", monthId: "04" },
+  { month: "May", monthId: "05" },
+  { month: "June", monthId: "06" },
+  { month: "July", monthId: "07" },
+  { month: "August", monthId: "08" },
+  { month: "September", monthId: "09" },
+  { month: "October", monthId: "10" },
+  { month: "November", monthId: "11" },
+  { month: "December", monthId: "12" },
+] as const;
