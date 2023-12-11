@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { villagersContainer } from "../../../../lib/animations";
+import { motion } from "framer-motion";
 import { TbFilterX } from "react-icons/tb";
 import { getVillagers, listGenders, listSpecies, listSigns } from "../../../../lib/data.ts";
 import Loading from "@/components/loading.jsx";
@@ -66,9 +68,18 @@ export default function Villagers() {
             <Filter title="Signs" content={listSigns} setFilter={setSign} selected={sign} setCurrentPage={setCurrentPage} />
           </div>
         </div>
-        <div className="mt-2 flex flex-wrap justify-center gap-5 md:w-4/6 lg:w-4/5">
+        <div className="mt-2 md:w-4/6 lg:w-4/5">
           {
-            loading ? (<Loading />) : (<VillagerCard results={data[currentPage]} />)
+            loading ? (<Loading />) :
+              (
+                <motion.div className="flex flex-wrap justify-center gap-5"
+                  key={gender + species + sign}
+                  variants={villagersContainer}
+                  initial="hidden"
+                  animate="visible">
+                  <VillagerCard results={data[currentPage]} />
+                </motion.div>
+              )
           }
         </div>
       </div>

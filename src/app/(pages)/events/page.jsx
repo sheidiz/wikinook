@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { eventContainer } from "../../../../lib/animations";
 import { motion } from "framer-motion";
 import { months, getEvents } from "../../../../lib/data";
 import SectionTitle from "@/components/section-title";
@@ -12,18 +13,6 @@ export default function Page() {
   const [loading, setLoading] = useState();
   const [data, setData] = useState([]);
   const [filters, setFilters] = useState({ month: "-1", hemisphere: "(Northern Hemisphere)" });
-
-  const container = {
-    hidden: { opacity: 1, scale: 0 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
-  }
 
   useEffect(() => {
     const getData = async () => {
@@ -52,7 +41,7 @@ export default function Page() {
           <h2 className="mb-3 text-gray-400 text-2xl font-semibold">{months[filters.month].month}</h2>
           <motion.div className="grid gap-3 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
             key={filters.month + filters.hemisphere}
-            variants={container}
+            variants={eventContainer}
             initial="hidden"
             animate="visible">
             <Events events={data[filters.month]} />

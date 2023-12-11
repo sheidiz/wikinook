@@ -4,20 +4,20 @@ import { FaPaw, FaCakeCandles, FaSun, FaQuoteRight } from "react-icons/fa6";
 import { BsGenderFemale, BsGenderMale } from "react-icons/bs";
 
 export default function VillagerCard({ results }) {
-
 	let display;
 	if (results) {
-		display = results.map((x) => {
+		display = results.map((x, index) => {
 
-			let { id, image_url, name, gender, species, birthday_day, birthday_month, sign, quote } = x;
+			let { image_url, name, gender, species, birthday_day, birthday_month, sign, quote } = x;
 
 			return (
 				<motion.div
-					initial={{ y: 20, opacity: 0 }}
-					animate={{ y: 0, opacity: 1 }}
-					transition={{ duration: 0.5 }}
-					key = { id }
-					className = "h-auto max-h-70 w-72 rounded-xl flex flex-col text-center text-gray-600 border-2 border-red-300 shadow-lg shadow-red-100" >
+					key={index}
+					variants={{
+						hidden: { y: 20, opacity: 0 },
+						visible: { y: 0, opacity: 1 }
+					}}
+					className="h-auto max-h-70 w-72 rounded-xl flex flex-col text-center text-gray-600 border-2 border-red-300 shadow-lg shadow-red-100" >
 					<div className="p-2 flex justify-around gap-4 text-sm bg-red-300 rounded-t-md ">
 						<p className="flex flex-col items-center"><FaPaw />{species ? (species) : "No info"}</p>
 						<p className="flex flex-col items-center"><FaCakeCandles />{birthday_day ? (birthday_month + " " + birthday_day) : "No info"}</p>
@@ -37,11 +37,11 @@ export default function VillagerCard({ results }) {
 					</div>
 				</motion.div >
 			)
-	});
-} else {
-	display = <p>No Villagers Found</p>
-}
-return (
-	<>{display}</>
-)
+		});
+	} else {
+		display = <p>No Villagers Found</p>
+	}
+	return (
+		<>{display}</>
+	)
 }
