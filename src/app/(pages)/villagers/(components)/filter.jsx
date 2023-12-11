@@ -29,6 +29,7 @@ export default function Filter({ title, content, setFilter, selected, setCurrent
                 onClick={(x) => {
                   (item == selected ? setFilter('') : setFilter(item));
                   setCurrentPage(0);
+                  setAccordionOpen(!accordionOpen);
                 }}
                 className={`block p-1 border-2 rounded-md ${item == selected ? 'border-red-200' : ''}`}
                 htmlFor={`${title}-${index}`}

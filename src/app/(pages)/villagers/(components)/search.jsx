@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Search({ setSearch, setCurrentPage }) {
 	return (
-		<form className="mt-1 mb-4 md:mb-10 mx-0 md:mx-5 text-center">
+		<form className="mt-1 mb-4 md:mb-6 mx-0 md:mx-5 text-center">
 			<input
 				placeholder="Search for a villager..."
 				type="text"

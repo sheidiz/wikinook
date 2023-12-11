@@ -11,6 +11,7 @@ import Search from "./(components)/search.jsx";
 import Pagination from "./(components)/pagination.jsx";
 import Filter from "./(components)/filter.jsx";
 import SectionTitle from "@/components/section-title.jsx";
+import SelectedFilters from "./(components)/selected-filters";
 
 
 export default function Villagers() {
@@ -62,23 +63,25 @@ export default function Villagers() {
             <TbFilterX className="inline-block me-1 mb-1" />
             <span className="underline">Clear Filters</span>
           </button>
-          <div>
+          <div className="flex flex-col">
             <Filter title="Gender" content={listGenders} setFilter={setGender} selected={gender} setCurrentPage={setCurrentPage} />
             <Filter title="Species" content={listSpecies} setFilter={setSpecies} selected={species} setCurrentPage={setCurrentPage} />
             <Filter title="Signs" content={listSigns} setFilter={setSign} selected={sign} setCurrentPage={setCurrentPage} />
           </div>
         </div>
         <div className="mt-2 md:w-4/6 lg:w-4/5">
+          <SelectedFilters gender={gender} setGender={setGender} species={species} setSpecies={setSpecies} sign={sign} setSign={setSign} />
           {
             loading ? (<Loading />) :
-              (
-                <motion.div className="flex flex-wrap justify-center gap-5"
+              (<React.Fragment>
+                <motion.div className="flex flex-wrap justify-center md:justify-start gap-5"
                   key={gender + species + sign}
                   variants={villagersContainer}
                   initial="hidden"
                   animate="visible">
                   <VillagerCard results={data[currentPage]} />
                 </motion.div>
+              </React.Fragment>
               )
           }
         </div>

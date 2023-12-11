@@ -17,7 +17,7 @@ export default function VillagerCard({ results }) {
 						hidden: { y: 20, opacity: 0 },
 						visible: { y: 0, opacity: 1 }
 					}}
-					className="h-auto max-h-70 w-72 rounded-xl flex flex-col text-center text-gray-600 border-2 border-red-300 shadow-lg shadow-red-100" >
+					className="h-auto max-h-70 w-80 rounded-xl flex flex-col text-center text-gray-600 border-2 border-red-300 shadow-lg shadow-red-100" >
 					<div className="p-2 flex justify-around gap-4 text-sm bg-red-300 rounded-t-md ">
 						<p className="flex flex-col items-center"><FaPaw />{species ? (species) : "No info"}</p>
 						<p className="flex flex-col items-center"><FaCakeCandles />{birthday_day ? (birthday_month + " " + birthday_day) : "No info"}</p>
