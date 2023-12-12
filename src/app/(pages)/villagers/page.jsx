@@ -34,6 +34,7 @@ export default function Villagers() {
         setData(villagers);
         const totalItems = villagers.reduce((total, currentArray) => total + currentArray.length, 0);
         const pages = Math.ceil(totalItems / (villagers[0].length));
+        setCurrentPage(0);
         setPages(pages);
       } catch (error) {
         console.error("Error fetching villagers:", error);
