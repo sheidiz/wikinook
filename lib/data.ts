@@ -171,9 +171,14 @@ export const getSeaCreatures = async (search) => {
 	}
 };
 /* [FOSSILS] */
-export const getFossils = async () => {
+export const getFossils = async (search) => {
 	try {
-		const fossils = await getData('/nh/fossils/individuals');
+		const rawFossils = await getData('/nh/fossils/individuals');
+		const fossils = rawFossils.filter(
+			item => (
+				item['name'].toLowerCase().includes(search.toLowerCase())
+			)
+		)
 		return fossils;
 	} catch (error) {
 		console.error('Error fetching fossils:', error);

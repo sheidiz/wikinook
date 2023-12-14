@@ -3,7 +3,7 @@ import { FaFilter } from "react-icons/fa6";
 import { getFossils } from "../../../../lib/data";
 import Fossils from "./fossils";
 
-export default function FossilsTab() {
+export default function FossilsTab({ search }) {
 
 	const [fossils, setFossils] = useState([]);
 	const [orderBy, setOrderBy] = useState("number");
@@ -12,7 +12,7 @@ export default function FossilsTab() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const fossils = await getFossils();
+				const fossils = await getFossils(search);
 
 				fossils.sort(
 					(a, b) => orderOrientation === "asc" ?
@@ -24,7 +24,7 @@ export default function FossilsTab() {
 			}
 		};
 		fetchData();
-	}, [orderBy, orderOrientation]);
+	}, [search, orderBy, orderOrientation]);
 
 	const setFilter = (value) => {
 		if (value === orderBy) {
