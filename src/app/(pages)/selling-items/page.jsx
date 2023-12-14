@@ -8,9 +8,8 @@ import FishTab from "./(components)/(fish)/fish-tab";
 
 export default function Page() {
 
-  const [selection, setSelection] = useState(() => {
-    return window.location.hash || "#bugs";
-  });
+  const getHashFromWindow = () => typeof window !== 'undefined' ? window.location.hash : null;
+  const [selection, setSelection] = useState(getHashFromWindow() || "#bugs");
 
   useEffect(() => {
     const handleHashChange = () => {
