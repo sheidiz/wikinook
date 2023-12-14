@@ -9,12 +9,13 @@ import FossilsTab from "./(components)/(fossils)/fossils-tab";
 
 export default function Page() {
 
-  const getHashFromWindow = () => typeof window !== 'undefined' ? window.location.hash : null;
-  const [selection, setSelection] = useState(getHashFromWindow() || "#bugs");
+  const [selection, setSelection] = useState(() => {
+    return window.location.hash || '#bugs';
+  });
 
   useEffect(() => {
     const handleHashChange = () => {
-      setSelection(window.location.hash);
+      setSelection(window.location.hash || '#bugs');
     };
 
     window.addEventListener('hashchange', handleHashChange);
@@ -24,15 +25,25 @@ export default function Page() {
     };
   }, []);
 
+  const renderContent = () => {
+    switch (selection) {
+      case '#bugs':
+        return <BugsTab />;
+      case '#fish':
+        return <FishTab />;
+      case '#fossils':
+        return <FossilsTab />;
+      default:
+        return <div>Sea Creatures</div>;
+    }
+  };
+
   return (
     <section className="mt-3 md:mt-6 mb-8 md:mb-10 mx-2 md:mx-10 lg:mx-20">
       <SectionTitle>Selling List</SectionTitle>
       <SellingItemsTabs selection={selection} setSelection={setSelection} />
       <div className=" mt-2 p-2 md:p-8 shadow border text-gray-700 rounded overflow-x-auto">
-        {selection === "#bugs" && <BugsTab />}
-        {selection === "#fish" && <FishTab />}
-        {selection === "#fossils" && <FossilsTab />}
-        {selection === "#sea-creatures" && "Sea Creatures"}
+        {renderContent()}
       </div>
 
     </section>

@@ -3,10 +3,10 @@ import React from "react";
 export default function Fossils({ fossils }) {
 	if (!fossils) return
 
-	return (fossils.map((x) => {
+	return (fossils.map((x, index) => {
 		let { number, url, name, image_url, fossil_group, sell } = x;
 		return (
-			<tr key={number}>
+			<tr key={index}>
 				<td className="sm:pe-1 text-center lg:text-start">
 					<img src={image_url} alt={name} className="pe-0 md:pe-2 h-10 sm:h-12 mx-auto block lg:inline-block" />
 					{name}
