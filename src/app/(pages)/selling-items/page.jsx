@@ -6,6 +6,7 @@ import SellingItemsTabs from "./(components)/tabs";
 import BugsTab from "./(components)/(bugs)/bugs-tab";
 import FishTab from "./(components)/(fish)/fish-tab";
 import FossilsTab from "./(components)/(fossils)/fossils-tab";
+import SeaCreatureTab from "./(components)/(sea-creatures)/sea-creature-tab";
 
 export default function Page() {
 
@@ -34,8 +35,8 @@ export default function Page() {
         return <FishTab />;
       case "#fossils":
         return <FossilsTab />;
-      case "sea-creatures":
-        return <div>Sea Creatures</div>;
+      case "#sea-creatures":
+        return <SeaCreatureTab />
     }
   };
 

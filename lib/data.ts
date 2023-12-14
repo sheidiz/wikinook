@@ -145,7 +145,16 @@ export const getFish = async () => {
 		return [];
 	}
 };
-
+/* [SEA CREATURES] */
+export const getSeaCreatures = async () => {
+	try {
+		const seaCreatures = await getData('/nh/sea');
+		return seaCreatures;
+	} catch (error) {
+		console.error('Error fetching sea creatures:', error);
+		return [];
+	}
+};
 /* [FOSSILS] */
 export const getFossils = async () => {
 	try {
