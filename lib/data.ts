@@ -135,3 +135,13 @@ export const getBugs = async () => {
 		return [];
 	}
 };
+/* [FISHES] */
+export const getFish = async () => {
+	try {
+		const fishes = await getData('/nh/fish');
+		return fishes;
+	} catch (error) {
+		console.error('Error fetching fishes:', error);
+		return [];
+	}
+};
