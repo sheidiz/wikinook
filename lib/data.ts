@@ -2,7 +2,7 @@ export const links = [
 	{ name: "Home", url: "/" },
 	{ name: "Villagers", url: "/villagers" },
 	{ name: "Events", url: "/events" },
-	{ name: "Selling Items", url: "/selling-items" }
+	{ name: "Selling Items", url: "/selling-items#bugs" }
 ] as const;
 
 export const listGenders = ['Female', 'Male'] as const;
@@ -124,3 +124,14 @@ export const getEvents = async (hemisphere) => {
 	return eventsPerMonth;
 
 }
+
+/* [BUGS] */
+export const getBugs = async () => {
+	try {
+		const bugs = await getData('/nh/bugs');
+		return bugs;
+	} catch (error) {
+		console.error('Error fetching bugs:', error);
+		return [];
+	}
+};
