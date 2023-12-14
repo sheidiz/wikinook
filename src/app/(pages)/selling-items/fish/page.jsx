@@ -1,9 +1,9 @@
 "use client";
 
-import SectionTitle from "@/components/section-title"
-import React, { useState } from "react"
-import SellingItemsTabs from "../(components)/tabs";
-import FishTab from "./(components)/fish-tab";
+import React, { useState } from "react";
+import SectionTitle from "@/components/section-title";
+import SellingItemsTabs from "@/components/Sellable-Items/tabs";
+import FishTab from "@/components/Sellable-Items/Fish/fish-tab";
 
 export default function Page() {
 
