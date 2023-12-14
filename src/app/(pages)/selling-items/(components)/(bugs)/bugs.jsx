@@ -8,8 +8,8 @@ export default function Bugs({ bugs }) {
 		return (
 			<tr key={number}>
 				<td>{number}</td>
-				<td className="sm:pe-1 text-center md:text-start">
-					<img src={image_url} alt={name} className="pe-0 md:pe-2 h-10 mx-auto block md:inline-block" />
+				<td className="sm:pe-1 text-center lg:text-start">
+					<img src={image_url} alt={name} className="pe-0 md:pe-2 h-10 sm:h-12 mx-auto block lg:inline-block" />
 					{name}
 				</td>
 				<td className="sm:pe-1 max-w-16 break-word">{location}</td>

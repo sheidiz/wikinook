@@ -3,7 +3,7 @@
 import SectionTitle from "@/components/section-title"
 import React, { useEffect, useState } from "react"
 import SellingItemsTabs from "./(components)/tabs";
-import BugsTab from "./(components)/bugs-tab";
+import BugsTab from "./(components)/(bugs)/bugs-tab";
 
 export default function Page() {
 
