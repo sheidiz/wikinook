@@ -3,7 +3,7 @@ import Fish from "./fish";
 import { getFish } from "../../../../lib/data";
 import { FaFilter } from "react-icons/fa6";
 
-export default function FishTab() {
+export default function FishTab({ search }) {
 
 	const [fish, setFish] = useState([]);
 	const [orderBy, setOrderBy] = useState("number");
@@ -12,7 +12,7 @@ export default function FishTab() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const fish = await getFish();
+				const fish = await getFish(search);
 
 				fish.sort(
 					(a, b) => orderOrientation === "asc" ?
@@ -24,7 +24,7 @@ export default function FishTab() {
 			}
 		};
 		fetchData();
-	}, [orderBy, orderOrientation]);
+	}, [search, orderBy, orderOrientation]);
 
 	const setFilter = (value) => {
 		if (value === orderBy) {

@@ -134,7 +134,6 @@ export const getBugs = async (search) => {
 				item['name'].toLowerCase().includes(search.toLowerCase())
 			)
 		)
-		console.log(rawBugs)
 		return bugs;
 	} catch (error) {
 		console.error('Error fetching bugs:', error);
@@ -142,10 +141,15 @@ export const getBugs = async (search) => {
 	}
 };
 /* [FISHES] */
-export const getFish = async () => {
+export const getFish = async (search) => {
 	try {
-		const fishes = await getData('/nh/fish');
-		return fishes;
+		const rawFish = await getData('/nh/fish');
+		const fish = rawFish.filter(
+			item => (
+				item['name'].toLowerCase().includes(search.toLowerCase())
+			)
+		)
+		return fish;
 	} catch (error) {
 		console.error('Error fetching fishes:', error);
 		return [];
