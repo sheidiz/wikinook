@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react"
 import SellingItemsTabs from "./(components)/tabs";
 import BugsTab from "./(components)/(bugs)/bugs-tab";
 import FishTab from "./(components)/(fish)/fish-tab";
+import FossilsTab from "./(components)/(fossils)/fossils-tab";
 
 export default function Page() {
 
@@ -30,7 +31,7 @@ export default function Page() {
       <div className=" mt-2 p-2 md:p-8 shadow border text-gray-700 rounded overflow-x-auto">
         {selection === "#bugs" && <BugsTab />}
         {selection === "#fish" && <FishTab />}
-        {selection === "#fossils" && "Fossils"}
+        {selection === "#fossils" && <FossilsTab />}
         {selection === "#sea-creatures" && "Sea Creatures"}
       </div>
 

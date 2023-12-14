@@ -145,3 +145,14 @@ export const getFish = async () => {
 		return [];
 	}
 };
+
+/* [FOSSILS] */
+export const getFossils = async () => {
+	try {
+		const fossils = await getData('/nh/fossils/individuals');
+		return fossils;
+	} catch (error) {
+		console.error('Error fetching fossils:', error);
+		return [];
+	}
+};
