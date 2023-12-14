@@ -36,19 +36,19 @@ export default function FossilsTab() {
 	};
 
 	return (
-		<table className="table-fixed sm:w-full box-border items-center bg-transparent border-collapse text-xs sm:text-sm break-words">
+		<table className="table-fixed min-[320px]:table-auto min-[320px]:w-full box-border items-center bg-transparent border-collapse text-xs sm:text-sm break-words">
 			<thead>
 				<tr className="align-middle uppercase font-semibold text-left border border-solid border-l-0 border-r-0">
-					<th className="w-10 sm:w-auto px-1 py-3 cursor-pointer md:pe-3 " onClick={() => setFilter("name")} >
+					<th className="max-w-10 min-[320px]:max-w-none px-1 py-3 cursor-pointer md:pe-3 " onClick={() => setFilter("name")} >
 						Name <FaFilter className="pe-1 md:inline-block text-red-300" />
 					</th>
-					<th className="w-16 sm:w-auto px-1 py-3 cursor-pointer md:pe-3 break-words" onClick={() => setFilter("fossil_group")}>
+					<th className="max-w-16 min-[320px]:max-w-none px-1 py-2 cursor-pointer md:pe-3" onClick={() => setFilter("fossil_group")}>
 						Fossil Group <FaFilter className="pe-1 md:inline-block text-red-300" />
 					</th>
-					<th className="w-16 sm:w-auto px-1 py-3 cursor-pointer md:pe-3" onClick={() => setFilter("sell")}>
+					<th className="max-w-16 min-[320px]:max-w-none px-1 py-3 cursor-pointer md:pe-3" onClick={() => setFilter("sell")}>
 						Sell <FaFilter className="pe-1 md:inline-block text-red-300" />
 					</th>
-					<th className="w-10 sm:w-auto md:pe-3">
+					<th className="max-w-10 min-[320px]:max-w-none md:pe-3">
 						Details
 					</th>
 				</tr>
@@ -56,7 +56,6 @@ export default function FossilsTab() {
 
 			<tbody>
 				{
-					
 					fossils && <Fossils fossils={fossils} />
 				}
 			</tbody>
