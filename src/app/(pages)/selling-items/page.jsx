@@ -9,31 +9,32 @@ import FossilsTab from "./(components)/(fossils)/fossils-tab";
 
 export default function Page() {
 
-  const [selection, setSelection] = useState(() => {
-    return window.location.hash || '#bugs';
-  });
+  const [selection, setSelection] = useState("");
 
   useEffect(() => {
     const handleHashChange = () => {
       setSelection(window.location.hash || '#bugs');
     };
 
-    window.addEventListener('hashchange', handleHashChange);
+    if (typeof window !== 'undefined') {
+      setSelection(window.location.hash || '#bugs');
+      window.addEventListener('hashchange', handleHashChange);
 
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
+      return () => {
+        window.removeEventListener('hashchange', handleHashChange);
+      };
+    }
   }, []);
 
   const renderContent = () => {
     switch (selection) {
-      case '#bugs':
+      case "#bugs":
         return <BugsTab />;
-      case '#fish':
+      case "#fish":
         return <FishTab />;
-      case '#fossils':
+      case "#fossils":
         return <FossilsTab />;
-      default:
+      case "sea-creatures":
         return <div>Sea Creatures</div>;
     }
   };
