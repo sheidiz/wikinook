@@ -16,7 +16,7 @@ export default function Page() {
       <SectionTitle>Sellable Items</SectionTitle>
       <SellingItemsTabs selection={selection} setSelection={setSelection} />
       <div className="mt-2 p-2 md:p-8 shadow border text-gray-700 rounded overflow-x-auto">
-      <Search itemName="fish" setSearch={setSearch} />
+        <Search itemName="fish" setSearch={setSearch} />
         <FishTab search={search} />
       </div>
     </section>

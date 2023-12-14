@@ -156,9 +156,14 @@ export const getFish = async (search) => {
 	}
 };
 /* [SEA CREATURES] */
-export const getSeaCreatures = async () => {
+export const getSeaCreatures = async (search) => {
 	try {
-		const seaCreatures = await getData('/nh/sea');
+		const rawSeaCreatures = await getData('/nh/sea');
+		const seaCreatures = rawSeaCreatures.filter(
+			item => (
+				item['name'].toLowerCase().includes(search.toLowerCase())
+			)
+		)
 		return seaCreatures;
 	} catch (error) {
 		console.error('Error fetching sea creatures:', error);

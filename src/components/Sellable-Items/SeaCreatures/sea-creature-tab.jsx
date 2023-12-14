@@ -3,7 +3,7 @@ import SeaCreature from "./sea-creature";
 import { getSeaCreatures } from "../../../../lib/data";
 import { FaFilter } from "react-icons/fa6";
 
-export default function SeaCreatureTab() {
+export default function SeaCreatureTab({ search }) {
 
 	const [content, setContent] = useState([]);
 	const [orderBy, setOrderBy] = useState("number");
@@ -12,7 +12,7 @@ export default function SeaCreatureTab() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const content = await getSeaCreatures();
+				const content = await getSeaCreatures(search);
 
 				content.sort(
 					(a, b) => orderOrientation === "asc" ?
@@ -24,7 +24,7 @@ export default function SeaCreatureTab() {
 			}
 		};
 		fetchData();
-	}, [orderBy, orderOrientation]);
+	}, [search, orderBy, orderOrientation]);
 
 	const setFilter = (value) => {
 		if (value === orderBy) {
