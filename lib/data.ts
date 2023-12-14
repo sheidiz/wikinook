@@ -126,9 +126,15 @@ export const getEvents = async (hemisphere) => {
 }
 
 /* [BUGS] */
-export const getBugs = async () => {
+export const getBugs = async (search) => {
 	try {
-		const bugs = await getData('/nh/bugs');
+		const rawBugs = await getData('/nh/bugs');
+		const bugs = rawBugs.filter(
+			item => (
+				item['name'].toLowerCase().includes(search.toLowerCase())
+			)
+		)
+		console.log(rawBugs)
 		return bugs;
 	} catch (error) {
 		console.error('Error fetching bugs:', error);

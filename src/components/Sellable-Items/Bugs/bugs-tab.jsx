@@ -3,7 +3,7 @@ import Bugs from "./bugs";
 import { getBugs } from "../../../../lib/data";
 import { FaFilter } from "react-icons/fa6";
 
-export default function BugsTab() {
+export default function BugsTab( {search} ) {
 
 	const [bugs, setBugs] = useState([]);
 	const [orderBy, setOrderBy] = useState('number');
@@ -12,7 +12,8 @@ export default function BugsTab() {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const bugs = await getBugs();
+				console.log("elsearc:["+ search + "]")
+				const bugs = await getBugs(search);
 
 				bugs.sort(
 					(a, b) => orderOrientation === 'asc' ?
@@ -24,7 +25,7 @@ export default function BugsTab() {
 			}
 		};
 		fetchData();
-	}, [orderBy, orderOrientation]);
+	}, [search, orderBy, orderOrientation]);
 
 	const setFilter = (value) => {
 		if (value === orderBy) {
