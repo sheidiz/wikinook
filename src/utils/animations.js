@@ -8,7 +8,7 @@ export const eventContainer = {
       staggerChildren: 0.2
     }
   }
-} as const;
+};
 
 export const villagersContainer = {
   hidden: { opacity: 1 },
@@ -19,4 +19,4 @@ export const villagersContainer = {
       staggerChildren: 0.2
     }
   }
-} as const;
+};

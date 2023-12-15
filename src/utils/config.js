@@ -3,17 +3,17 @@ export const links = [
     { name: "Villagers", url: "/villagers" },
     { name: "Events", url: "/events" },
     { name: "Sellable Items", url: "/sellable-items/bugs" }
-] as const;
+] ;
 
-export const listGenders = ['Female', 'Male'] as const;
+export const listGenders = ['Female', 'Male'];
 
 export const listSigns = ['Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio',
-    'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'] as const;
+    'Sagittarius', 'Capricorn', 'Aquarius', 'Pisces'];
 
 export const listSpecies = ['Alligator', 'Anteater', 'Bear', 'Bear cub', 'Bird', 'Bull', 'Cat', 'Cub', 'Chicken',
     'Cow', 'Deer', 'Dog', 'Duck', 'Eagle', 'Elephant', 'Frog', 'Goat', 'Gorilla', 'Hamster',
     'Hippo', 'Horse', 'Koala', 'Kangaroo', 'Lion', 'Monkey', 'Mouse', 'Octopus', 'Ostrich',
-    'Penguin', 'Pig', 'Rabbit', 'Rhino', 'Rhinoceros', 'Sheep', 'Squirrel', 'Tiger', 'Wolf'] as const;
+    'Penguin', 'Pig', 'Rabbit', 'Rhino', 'Rhinoceros', 'Sheep', 'Squirrel', 'Tiger', 'Wolf'];
 
 export const months = [
     { month: "January", monthId: "01" },
@@ -28,4 +28,4 @@ export const months = [
     { month: "October", monthId: "10" },
     { month: "November", monthId: "11" },
     { month: "December", monthId: "12" },
-] as const;
+];
