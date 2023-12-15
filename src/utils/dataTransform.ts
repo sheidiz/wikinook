@@ -45,4 +45,10 @@ export const sortEvents = (field, events) => {
 		});
 	});
 }
-
+export const searchNameIncludes = (searchTerm, array) => {
+	return array.filter(
+		item => (
+			item["name"].toLowerCase().includes(searchTerm.toLowerCase())
+		)
+	)
+};

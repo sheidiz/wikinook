@@ -1,6 +1,6 @@
 import { getData } from "./api";
 import { months } from "./config";
-import { paginateItems, completeEventInfo, sortEvents } from "./dataTransform";
+import { paginateItems, completeEventInfo, sortEvents, searchNameIncludes } from "./dataTransform";
 
 const currentYear = new Date().getFullYear();
 
@@ -45,11 +45,7 @@ export const getBugs = async (search) => {
 
 	if (!bugs) return [];
 
-	const filtered = bugs.filter(
-		item => (
-			item['name'].toLowerCase().includes(search.toLowerCase())
-		)
-	)
+	const filtered = searchNameIncludes(search, bugs);
 
 	return filtered;
 };
@@ -59,11 +55,7 @@ export const getFish = async (search) => {
 
 	if (!fish) return [];
 
-	const filtered = fish.filter(
-		item => (
-			item['name'].toLowerCase().includes(search.toLowerCase())
-		)
-	)
+	const filtered = searchNameIncludes(search, fish);
 
 	return filtered;
 };
@@ -73,11 +65,7 @@ export const getSeaCreatures = async (search) => {
 
 	if (!seaCreatures) return [];
 
-	const filtered = seaCreatures.filter(
-		item => (
-			item['name'].toLowerCase().includes(search.toLowerCase())
-		)
-	)
+	const filtered = searchNameIncludes(search, seaCreatures);
 
 	return filtered;
 };
@@ -87,11 +75,7 @@ export const getFossils = async (search) => {
 
 	if (!fossils) return [];
 
-	const filtered = fossils.filter(
-		item => (
-			item['name'].toLowerCase().includes(search.toLowerCase())
-		)
-	)
+	const filtered = searchNameIncludes(search, fossils);
 
 	return filtered;
 };
