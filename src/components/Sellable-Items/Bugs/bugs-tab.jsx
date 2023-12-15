@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Bugs from "./bugs";
-import { getBugs } from "@/utils/data";
+import { getBugs } from "@/utils/getData";
 import { FaFilter } from "react-icons/fa6";
 
 export default function BugsTab({ search }) {

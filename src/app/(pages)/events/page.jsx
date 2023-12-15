@@ -3,7 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { eventContainer } from "@/utils/animations";
-import { months, getEvents } from "@/utils/data";
+import { months } from "@/utils/config";
+import { getEvents } from "@/utils/getData";
 import SectionTitle from "@/components/section-title";
 import FilterMonth from "@/components/Events/filter-month";
 import FilterHemisphere from "@/components/Events/filter-hemisphere";

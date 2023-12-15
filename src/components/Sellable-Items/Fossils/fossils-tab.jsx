@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaFilter } from "react-icons/fa6";
-import { getFossils } from "@/utils/data";
+import { getFossils } from "@/utils/getData";
 import Fossils from "./fossils";
 
 export default function FossilsTab({ search }) {
