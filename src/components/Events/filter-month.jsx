@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { months } from "../../../lib/data";
+import { months } from "../../utils/data";
 
 export default function FilterMonth({ filters, setFilters }) {
 	

@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { eventContainer } from "../../../../lib/animations";
-import { months, getEvents } from "../../../../lib/data";
+import { eventContainer } from "@/utils/animations";
+import { months, getEvents } from "@/utils/data";
 import SectionTitle from "@/components/section-title";
 import FilterMonth from "@/components/Events/filter-month";
 import FilterHemisphere from "@/components/Events/filter-hemisphere";

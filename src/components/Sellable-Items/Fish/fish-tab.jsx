@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Fish from "./fish";
-import { getFish } from "../../../../lib/data";
+import { getFish } from "@/utils/data";
 import { FaFilter } from "react-icons/fa6";
 
 export default function FishTab({ search }) {

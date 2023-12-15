@@ -3,8 +3,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { TbFilterX } from "react-icons/tb";
-import { villagersContainer } from "../../../../lib/animations";
-import { getVillagers, listGenders, listSpecies, listSigns } from "../../../../lib/data.ts";
+import { villagersContainer } from "@/utils/animations";
+import { getVillagers, listGenders, listSpecies, listSigns } from "@/utils/data";
 import SectionTitle from "@/components/section-title.jsx";
 import Loading from "@/components/loading.jsx";
 import VillagerCard from "@/components/Villagers/villagerCard.jsx";

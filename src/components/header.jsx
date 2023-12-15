@@ -5,7 +5,7 @@ import Logo from "@/public/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { links } from "../../lib/data";
+import { links } from "../utils/data";
 import { TbX, TbMenuDeep } from "react-icons/tb";
 import { usePathname } from "next/navigation";
 

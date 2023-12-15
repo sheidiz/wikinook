@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SeaCreature from "./sea-creature";
-import { getSeaCreatures } from "../../../../lib/data";
+import { getSeaCreatures } from "@/utils/data";
 import { FaFilter } from "react-icons/fa6";
 
 export default function SeaCreatureTab({ search }) {
