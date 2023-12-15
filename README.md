@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WikiNook
 
-## Getting Started
+WikiNook is a website where you can get information about the game Animal Crossing.
 
-First, run the development server:
+# Deployment
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The WikiNook website is deployed and accessible at [wikinook.vercel.app](https://wikinook.vercel.app/).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Used technologies and dependencies
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- [Nookipedia API](https://api.nookipedia.com/)
+- [React](https://react.dev/)
+- [Next.js](https://getbootstrap.com/)
+- [Tailwind](https://tailwindcss.com/)
+- [React Paginate](https://github.com/AdeleD/react-paginate#readme)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [Framer Motion](https://www.framer.com/motion/)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+In WikiNook, you can search for information about:
+- Villagers: name, birthdays, phrases
+- Events: in both hemispheres, so you don't miss them.
+- SellableItems: with our tables, you can search which fish, bugs, fossils or sea creatures are sold for most bells.
 
-To learn more about Next.js, take a look at the following resources:
+## Attribution
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+All textual content and images used in this project are sourced from [Nookipedia](https://nookipedia.com/) via the [Nookipedia API](https://api.nookipedia.com/). I would like to give credit to Nookipedia for providing the valuable information used in this application.
