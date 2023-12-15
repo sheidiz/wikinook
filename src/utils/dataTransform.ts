@@ -39,9 +39,10 @@ export const completeEventInfo = (e) => {
 };
 
 export const sortEvents = (field, events) => {
-    events.forEach(e => {
+	events.forEach(e => {
 		e.sort((a, b) => {
 			return a[field] - b[field];
 		});
 	});
 }
+
