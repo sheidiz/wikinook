@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { eventContainer } from "../../../../lib/animations";
 import { motion } from "framer-motion";
+import { eventContainer } from "../../../../lib/animations";
 import { months, getEvents } from "../../../../lib/data";
 import SectionTitle from "@/components/section-title";
-import FilterMonth from "./(components)/filter-month";
-import FilterHemisphere from "./(components)/filter-hemisphere";
-import Events from "./(components)/events";
+import FilterMonth from "@/components/Events/filter-month";
+import FilterHemisphere from "@/components/Events/filter-hemisphere";
+import Events from "@/components/Events/events";
 
 export default function Page() {
   const [loading, setLoading] = useState();
