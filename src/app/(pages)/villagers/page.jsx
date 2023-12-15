@@ -1,17 +1,17 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { villagersContainer } from "../../../../lib/animations";
 import { motion } from "framer-motion";
 import { TbFilterX } from "react-icons/tb";
+import { villagersContainer } from "../../../../lib/animations";
 import { getVillagers, listGenders, listSpecies, listSigns } from "../../../../lib/data.ts";
-import Loading from "@/components/loading.jsx";
-import VillagerCard from "./(components)/villagerCard.jsx";
-import Search from "./(components)/search.jsx";
-import Pagination from "./(components)/pagination.jsx";
-import Filter from "./(components)/filter.jsx";
 import SectionTitle from "@/components/section-title.jsx";
-import SelectedFilters from "./(components)/selected-filters";
+import Loading from "@/components/loading.jsx";
+import VillagerCard from "@/components/Villagers/villagerCard.jsx";
+import Search from "@/components/Villagers/search.jsx";
+import Pagination from "@/components/Villagers/pagination.jsx";
+import Filter from "@/components/Villagers/filter.jsx";
+import SelectedFilters from "@/components/Villagers/selected-filters";
 
 
 export default function Villagers() {
